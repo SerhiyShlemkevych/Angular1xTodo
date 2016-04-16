@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section FootScripts
+{
+    <script src="~/Scripts/app/pages/tasks/tasks.module.js"></script>
+    <script src="~/Scripts/app/pages/tasks/tasks.controller.js"></script>
+    <script src="~/Scripts/app/pages/tasks/tasks.service.js"></script>
+}
+
+<section ng-app="tasksModule">
+
+    <h2>Tasks</h2>
+
+
+    <div ng-controller="TasksController as controller">
+
+        <div>Tasks number: {{ controller.tasks.length }}</div>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Done</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="task in controller.tasks">
+                        <td>{{ task.Id }}</td>
+                        <td>{{ task.Title }}</td>
+                        <td>{{ task.Done }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</section>
