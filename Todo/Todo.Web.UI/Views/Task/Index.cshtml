@@ -16,9 +16,12 @@
     <h2>Tasks</h2>
 
 
-    <div ng-controller="TasksController as controller">
-
-        <div>Tasks number: {{ controller.tasks.length }}</div>
+    <div ng-controller="TasksController as c">
+        <div>
+            <input type="text" ng-model="c.newTaskTitle" placeholder="Enter a new task" />
+            <button ng-click="c.onAddNewTask()" ng-disabled="!c.isNewTaskTitleValid()">Add</button>
+        </div>
+        <div>Tasks number: {{ c.tasks.length }}</div>
         <div>
             <table>
                 <thead>
@@ -29,7 +32,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="task in controller.tasks">
+                    <tr ng-repeat="task in c.tasks">
                         <td>{{ task.Id }}</td>
                         <td>{{ task.Title }}</td>
                         <td>{{ task.Done }}</td>

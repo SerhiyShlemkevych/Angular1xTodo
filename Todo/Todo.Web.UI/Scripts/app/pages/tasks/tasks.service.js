@@ -9,7 +9,8 @@
     function tasksService($http) {
 
         var service = {
-            getTasks: getTasksAjax
+            getTasks: getTasksAjax,
+            addTask: addTask
         };
 
         return service;
@@ -25,6 +26,11 @@
             } else {
                 return [];
             }
+        }
+
+        function addTask(task) {
+            var promise = $http.post("/Task/AddTask", task);
+            return promise;
         }
 
     }
