@@ -11,6 +11,7 @@
         vm.tasks = [];
         vm.newTaskTitle = "";
         vm.onAddNewTask = onAddNewTask;
+        vm.onDoneChanged = onDoneChanged;
         vm.isNewTaskTitleValid = isNewTaskTitleValid;
 
         activate();
@@ -37,6 +38,17 @@
                 }, function (response) {
                     console.log("[TasksController] onAddNewTask - fail", arguments);
                     alert("Adding a new task has failed.");
+                });
+        }
+
+        function onDoneChanged(task) {
+            console.log("[TasksController] onDoneChanged - ", arguments);
+            tasksService
+                .updateTask(task)
+                .then(function (response) {
+                    console.log("[TasksController] - success", arguments);
+                }, function () {
+                    console.log("[TasksController] - fail", arguments);
                 });
         }
 

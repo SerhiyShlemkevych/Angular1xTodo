@@ -35,7 +35,9 @@
                     <tr ng-repeat="task in c.tasks">
                         <td>{{ task.Id }}</td>
                         <td>{{ task.Title }}</td>
-                        <td>{{ task.Done }}</td>
+                        <td>
+                            <input type="checkbox" ng-model="task.Done" ng-click="c.onDoneChanged(task)" />
+                        </td>
                     </tr>
                 </tbody>
             </table>

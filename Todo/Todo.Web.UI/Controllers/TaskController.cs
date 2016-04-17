@@ -50,6 +50,14 @@ namespace Todo.Web.UI.Controllers
             return Json(addedTaskEntity);
         }
 
+        [HttpPost]
+        public ActionResult UpdateTask(TaskModel task)
+        {
+            TaskEntity taskEntity = (TaskEntity)task; // explicit type conversion operator defined within the TaskModel class
+            TaskEntity updatedTaskEntity = _taskRepository.Update(taskEntity);
+            return Json(updatedTaskEntity);
+        }
+
         #endregion
 
         #region Helpers

@@ -55,7 +55,12 @@ namespace Todo.Repositories
 
         public TaskEntity Update(TaskEntity task)
         {
-            throw new NotImplementedException();
+            var existingTask = tasks
+                .Select((t, i) => new { Task = t, Index = i })
+                .Where(r => r.Task.Id == task.Id)
+                .Single();
+            tasks[existingTask.Index] = task;
+            return task;
         }
 
         #endregion
