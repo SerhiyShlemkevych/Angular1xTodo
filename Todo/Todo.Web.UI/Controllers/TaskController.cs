@@ -4,12 +4,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Todo.Entities;
+using Todo.Repositories;
 using Todo.Web.UI.Models;
 
 namespace Todo.Web.UI.Controllers
 {
     public class TaskController : Controller
     {
+        #region Fields
+
+        private readonly ITaskRepository _taskRepository;
+
+        #endregion
+
+        #region Constructors
+
+        public TaskController()
+        {
+            _taskRepository = new FakeTaskRepository();
+        }
+
+        #endregion
+
+        #region Actions
+
         [HttpGet]
         public ActionResult Index()
         {
@@ -19,21 +38,23 @@ namespace Todo.Web.UI.Controllers
         [HttpGet]
         public ActionResult GetTasks()
         {
-            TaskModel[] tasks = new TaskModel[]
-            {
-                new TaskModel { Id = 1, Title = "Task #1", Done = false },
-                new TaskModel { Id = 2, Title = "Task #2", Done = false },
-                new TaskModel { Id = 3, Title = "Task #3", Done = false },
-                new TaskModel { Id = 4, Title = "Task #4", Done = false },
-            };
+            var tasks = _taskRepository.GetAll();
             return Json(tasks, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
         public ActionResult AddTask(TaskModel task)
         {
-            return Json(task);
+            TaskEntity taskEntity = (TaskEntity)task; // explicit type conversion operator defined within the TaskModel class
+            TaskEntity addedTaskEntity = _taskRepository.Add(taskEntity);            
+            return Json(addedTaskEntity);
         }
+
+        #endregion
+
+        #region Helpers
+
+        #endregion
 
     }
 }

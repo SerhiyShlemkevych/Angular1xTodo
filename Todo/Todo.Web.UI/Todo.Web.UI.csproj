@@ -126,6 +126,16 @@
     <Folder Include="App_Data\" />
     <Folder Include="Styles\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Todo.Entities\Todo.Entities.csproj">
+      <Project>{9ced9d5f-5f7c-46d9-8678-115cfb790dd3}</Project>
+      <Name>Todo.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Todo.Repositories\Todo.Repositories.csproj">
+      <Project>{368b8ce4-8cef-471d-a4d2-070bf253fa89}</Project>
+      <Name>Todo.Repositories</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

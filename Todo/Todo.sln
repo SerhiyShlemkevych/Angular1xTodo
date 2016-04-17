@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.Web.UI", "Todo.Web.UI\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.Web.UI.Tests", "Todo.Web.UI.Tests\Todo.Web.UI.Tests.csproj", "{22862678-9109-489C-9FBB-F99F3EF80329}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.Repositories", "Todo.Repositories\Todo.Repositories.csproj", "{368B8CE4-8CEF-471D-A4D2-070BF253FA89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.Entities", "Todo.Entities\Todo.Entities.csproj", "{9CED9D5F-5F7C-46D9-8678-115CFB790DD3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{22862678-9109-489C-9FBB-F99F3EF80329}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22862678-9109-489C-9FBB-F99F3EF80329}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22862678-9109-489C-9FBB-F99F3EF80329}.Release|Any CPU.Build.0 = Release|Any CPU
+		{368B8CE4-8CEF-471D-A4D2-070BF253FA89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{368B8CE4-8CEF-471D-A4D2-070BF253FA89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{368B8CE4-8CEF-471D-A4D2-070BF253FA89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{368B8CE4-8CEF-471D-A4D2-070BF253FA89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CED9D5F-5F7C-46D9-8678-115CFB790DD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CED9D5F-5F7C-46D9-8678-115CFB790DD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CED9D5F-5F7C-46D9-8678-115CFB790DD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CED9D5F-5F7C-46D9-8678-115CFB790DD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
